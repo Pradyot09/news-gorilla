@@ -31,7 +31,7 @@ export class News extends Component {
   }
 
   async handleFetchArticle (page){
-    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${process.env.REACT_APP_NEWS_API}&page=${page}&pageSize=${this.state.pageSize}`;
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${process.env.REACT_APP_NEWS_API_KEY}&page=${page}&pageSize=${this.state.pageSize}`;
     let data = await fetch(url).then((res)=>res.json()).catch((err)=>console.log(err));
     this.setState({articles : data.articles,
       totalResults : data.totalResults,
